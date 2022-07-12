@@ -2,7 +2,7 @@
 #include <vector>
  
 //main sort function
-std::vector<int> quick_sort(std::vector <int> vector__);
+std::vector<int> quick_sort(std::vector <int> &vector__);
  
 //connection of greater, lower and middle arrays
 std::vector<int> connect(std::vector <int> start__, std::vector <int> end__, int number__); 
@@ -16,7 +16,7 @@ int main(){
     print(sorted_array);
 }
  
-std::vector<int> quick_sort(std::vector <int> vector__){
+std::vector<int> quick_sort(std::vector <int> &vector__){
     int length = vector__.size(); 
     int id_of_element = length/2;
     int number__ = vector__[id_of_element];
