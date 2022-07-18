@@ -4,6 +4,7 @@
 
 void build_tree(int tree[], int a[], int v, int l, int r);
 int get_sum(int tree[], int v, int tl, int tr, int l, int r );
+void update_tree(int tree[], int a[], int id_of_change, int change_, int v, int l, int r);
 
 int main(){  
     int a[LENGTH];     
