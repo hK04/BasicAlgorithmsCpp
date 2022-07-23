@@ -11,9 +11,12 @@ typedef struct tree_element {
 
 tree_element* create_tree_element(int val);
 
+void search_tree(tree_element* root, tree_element* elem);
+
 void insert_into_tree(tree_element* root, tree_element* elem);
 
 void print_tree(tree_element* root); 
+
 
 int main(){
     int a[7] = {8, 3, 1, 6, 10, 11, 4};
@@ -22,7 +25,12 @@ int main(){
         tree_element* el = create_tree_element(a[i]);
         insert_into_tree(root, el);
     }
-    print_tree(root);
+    print_tree(root); 
+    /* test of search for element
+    tree_element* vertex = create_tree_element(11);
+    search_tree(root, vertex);
+    printf("Found Value: %d", vertex->right->value);
+    */
     return 0;
 }
 
@@ -59,3 +67,19 @@ void print_tree(tree_element* root){
         print_tree(root->right);
     }
 }
+
+void search_tree(tree_element* root, tree_element* elem){
+    if (elem->value < root->value){
+        if (root->left == NULL){
+            elem->right = root;
+        } else{
+            search_tree(root->left, elem);
+        }
+    } else {
+        if (root->right == NULL){
+            elem->right = root;
+        } else{
+            search_tree(root->right, elem);
+        }
+    }
+};
