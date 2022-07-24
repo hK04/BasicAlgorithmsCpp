@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-using namespace std;
-
 //Fracture of Tree
 typedef struct tree_element {
     int value;
@@ -26,11 +24,11 @@ int main(){
         insert_into_tree(root, el);
     }
     print_tree(root); 
-    /* test of search for element
-    tree_element* vertex = create_tree_element(11);
+    /* test of search for element */
+    tree_element* vertex = create_tree_element(8);
     search_tree(root, vertex);
     printf("Found Value: %d", vertex->right->value);
-    */
+    
     return 0;
 }
 
@@ -69,17 +67,12 @@ void print_tree(tree_element* root){
 }
 
 void search_tree(tree_element* root, tree_element* elem){
-    if (elem->value < root->value){
-        if (root->left == NULL){
-            elem->right = root;
-        } else{
+    if (elem->value == root->value){
+        elem->right = root;
+    }else if (elem->value < root->value){
             search_tree(root->left, elem);
-        }
-    } else {
-        if (root->right == NULL){
-            elem->right = root;
-        } else{
+    }else{
             search_tree(root->right, elem);
-        }
     }
+    
 };
