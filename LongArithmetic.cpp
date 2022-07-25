@@ -1,26 +1,18 @@
 #include <stdio.h>
 
 #define max(x, y) (((x) > (y)) ? (x) : (y))
-#define _CRT_SECURE_NO_WARNINGS
 
-int* sum(int a[], int b[]);
+int b[4] = {1, 2, 3, 5};
+int a[4] = {4, 5, 3, 1};
 
-void print(int c[]);
+void sum();
 
 int main(){
-    int a[3] = {1, 2, 3};
-    int b[3] = {4, 5, 6};
-    int * pointer = sum(a, b);
-    printf("%d", pointer[0]);
-    //for (int i = 0; i < sizeof(pointer); i++)
-    //    printf("%d ", pointer[i]);
-    //printf("%d", *(pointer+0));
-    //print(pointer);
-    return 0;
+    sum();
 }
 
 //a + b = c
-int* sum(int a[], int b[]){
+void sum(){
     int len_of_a = sizeof(a) / sizeof(int);
     int len_of_b = sizeof(b) / sizeof(int);
     int max_len = max(len_of_a, len_of_b);
@@ -51,12 +43,8 @@ int* sum(int a[], int b[]){
     if (div_ != 0){
         c[0] += div_;
     }
-    int aaaaa[3] = {1, 2, 3};
-    return aaaaa;
-}
-
-void print(int c[]){
-    int len_of_c = sizeof(c)/sizeof(int);
-    for (int i = 0; i < len_of_c; i++)
+        
+    for (int i = 0; i < max_len + 1; i++)
         printf("%d ", c[i]);
+    
 }

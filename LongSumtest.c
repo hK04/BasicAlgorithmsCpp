@@ -6,8 +6,8 @@
 void print(int c[]);
 
 int main(){
-    int b[5] = {1, 7, 3, 5, 6};
-    int a[4] = {8, 8, 3, 4};
+    int a[4] = {9, 1, 2, 3};
+    int b[2] = {4, 5};
 
     int len_of_a = sizeof(a) / sizeof(int);
     int len_of_b = sizeof(b) / sizeof(int);
